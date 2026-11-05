@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c16s3sctnkuls"
+path="res://.godot/imported/SFX_Jump_13.wav-e2a7bfb2b297767deddc259aee0a0db2.sample"
+
+[deps]
+
+source_file="res://Impy & BunBun/sounds/SFX_Jump_13.wav"
+dest_files=["res://.godot/imported/SFX_Jump_13.wav-e2a7bfb2b297767deddc259aee0a0db2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
