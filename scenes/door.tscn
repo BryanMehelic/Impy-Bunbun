@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8kq1gadvdi0d"]
+
+[ext_resource type="Texture2D" uid="uid://dx1kwt8qwwhre" path="res://Impy & BunBun/visual assets/backgrounds and items/temp_door.png" id="1_ba8gm"]
+[ext_resource type="Script" uid="uid://ct1fld12ul2xb" path="res://Impy & BunBun/scripts/door.gd" id="1_v6xrn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6xrn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ba8gm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ba8gm"]
+size = Vector2(92, 70)
+
+[node name="door" type="Area2D"]
+script = ExtResource("1_v6xrn")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_v6xrn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 11)
+shape = SubResource("RectangleShape2D_ba8gm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

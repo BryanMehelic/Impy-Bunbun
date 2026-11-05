@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://drke3pchtbxg7"]
+
+[ext_resource type="Script" uid="uid://dk7p0oaxi6ob0" path="res://Impy & BunBun/scripts/ball_body.gd" id="1_am702"]
+[ext_resource type="Texture2D" uid="uid://dhomed7l41o1f" path="res://Impy & BunBun/visual assets/backgrounds and items/ball.png" id="2_am702"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_am702"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4hj8g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p8uan"]
+radius = 7.071068
+
+[node name="ball_body" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_am702")
+script = ExtResource("1_am702")
+launch_scalar = 700.0
+
+[node name="grabbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grabbox"]
+shape = SubResource("CircleShape2D_4hj8g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("2_am702")
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p8uan")
+
+[node name="launch_timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="area_entered" from="grabbox" to="." method="_on_grabbox_area_entered"]
+[connection signal="area_exited" from="grabbox" to="." method="_on_grabbox_area_exited"]

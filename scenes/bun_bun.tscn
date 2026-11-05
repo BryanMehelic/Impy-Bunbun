@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://1tx3mwofyysg"]
+
+[ext_resource type="Script" uid="uid://cdom2moq14lwd" path="res://Impy & BunBun/scripts/bun_bun.gd" id="1_6vi5w"]
+[ext_resource type="Texture2D" uid="uid://cmsmehq2i7qln" path="res://Impy & BunBun/visual assets/characters/bunbun_sketch_2.png" id="2_1v5rg"]
+[ext_resource type="AudioStream" uid="uid://bhhdf0ieapijh" path="res://Impy & BunBun/sounds/SFX_Jump_07.wav" id="3_1v5rg"]
+[ext_resource type="AudioStream" uid="uid://c16s3sctnkuls" path="res://Impy & BunBun/sounds/SFX_Jump_13.wav" id="4_ewbh8"]
+[ext_resource type="AudioStream" uid="uid://bbqpqmyca0ij6" path="res://Impy & BunBun/sounds/Block Break 1.wav" id="5_jabhb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ewbh8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1v5rg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jabhb"]
+radius = 12.0
+height = 62.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6vi5w"]
+radius = 38.0
+height = 80.0
+
+[node name="BunBun" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_6vi5w")
+bounce_launch = Vector2(0, -100)
+jump_gravity = Vector2(0, 400)
+reg_gravity = Vector2(0, 980)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ewbh8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("CapsuleShape2D_jabhb")
+
+[node name="interact_box" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="interact_collision" type="CollisionShape2D" parent="interact_box"]
+position = Vector2(1, -1)
+shape = SubResource("CapsuleShape2D_6vi5w")
+
+[node name="launch_timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1v5rg")
+volume_db = -3.0
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ewbh8")
+volume_db = -5.0
+
+[node name="die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jabhb")
+volume_db = -3.0
+
+[connection signal="area_entered" from="interact_box" to="." method="_on_interact_box_area_entered"]
+[connection signal="area_exited" from="interact_box" to="." method="_on_interact_box_area_exited"]
+[connection signal="body_entered" from="interact_box" to="." method="_on_interact_box_body_entered"]
+[connection signal="body_exited" from="interact_box" to="." method="_on_interact_box_body_exited"]
+[connection signal="finished" from="die" to="." method="_on_die_finished"]

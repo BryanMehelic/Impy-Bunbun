@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://catrta665yl7n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ao2g7"]
+size = Vector2(34, 31)
+
+[node name="impy_cube_mode" type="AnimatableBody2D"]
+
+[node name="cube_hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ao2g7")

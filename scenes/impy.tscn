@@ -1,0 +1,228 @@
+[gd_scene load_steps=31 format=3 uid="uid://dcp1g6ek6xl8g"]
+
+[ext_resource type="Script" uid="uid://4eyi1h6ingmo" path="res://Impy & BunBun/scripts/impy.gd" id="1_2waoh"]
+[ext_resource type="Texture2D" uid="uid://db2hqva0g45u2" path="res://Impy & BunBun/visual assets/characters/i_cube.png" id="2_hcr7m"]
+[ext_resource type="Texture2D" uid="uid://kw7tlpcx671p" path="res://Impy & BunBun/visual assets/characters/i_walk_1.png" id="3_fg3pr"]
+[ext_resource type="Texture2D" uid="uid://byf8s2ewqpd6v" path="res://Impy & BunBun/visual assets/characters/i_walk_2.png" id="4_hcr7m"]
+[ext_resource type="Texture2D" uid="uid://cypjxuqyy42ew" path="res://Impy & BunBun/visual assets/characters/impy_fall_1.png" id="4_lku2n"]
+[ext_resource type="Texture2D" uid="uid://dd11c1o2k2r1h" path="res://Impy & BunBun/visual assets/characters/impy_sketch_2.png" id="4_nkmum"]
+[ext_resource type="Texture2D" uid="uid://b2a7bupjp50uk" path="res://Impy & BunBun/visual assets/characters/impy_dead_1.png" id="4_oyloq"]
+[ext_resource type="Texture2D" uid="uid://cd1k88kt4cbev" path="res://Impy & BunBun/visual assets/characters/impy_look_down_1.png" id="4_qoriv"]
+[ext_resource type="Texture2D" uid="uid://cvll5xctrltfg" path="res://Impy & BunBun/visual assets/characters/impy_look_up_1.png" id="5_1dnmp"]
+[ext_resource type="Texture2D" uid="uid://be7wvvt58251t" path="res://Impy & BunBun/visual assets/characters/impy_dead_2.png" id="5_ha7vm"]
+[ext_resource type="Texture2D" uid="uid://dtmwn5d0eljv1" path="res://Impy & BunBun/visual assets/characters/impy_fall_2.png" id="5_na5ga"]
+[ext_resource type="Texture2D" uid="uid://b8n57l5taxx1s" path="res://Impy & BunBun/visual assets/characters/i_walk_3.png" id="5_qoriv"]
+[ext_resource type="Texture2D" uid="uid://116hpv241xms" path="res://Impy & BunBun/visual assets/characters/i_walk_4.png" id="6_1dnmp"]
+[ext_resource type="Texture2D" uid="uid://b8018yah4e6f2" path="res://Impy & BunBun/visual assets/characters/impy_dead_3.png" id="6_ha7vm"]
+[ext_resource type="Texture2D" uid="uid://cptg5sj0k2ggs" path="res://Impy & BunBun/visual assets/characters/impy_fall_3.png" id="6_r5dl1"]
+[ext_resource type="Texture2D" uid="uid://b67gc5hwtkisy" path="res://Impy & BunBun/visual assets/characters/i_walk_5.png" id="7_e4kgb"]
+[ext_resource type="Texture2D" uid="uid://c73k2o72unpw0" path="res://Impy & BunBun/visual assets/characters/impy_fall_4.png" id="7_oyloq"]
+[ext_resource type="Texture2D" uid="uid://cngso7bb1ai27" path="res://Impy & BunBun/visual assets/characters/i_walk_6.png" id="8_2whcs"]
+[ext_resource type="Texture2D" uid="uid://cs1g6x0o302dj" path="res://Impy & BunBun/visual assets/characters/impy_jump.png" id="8_ha7vm"]
+[ext_resource type="Texture2D" uid="uid://bec0j7i4xvvcr" path="res://Impy & BunBun/visual assets/characters/i_walk_7.png" id="9_hm17e"]
+[ext_resource type="Texture2D" uid="uid://c6u5uxp7m2nj2" path="res://Impy & BunBun/visual assets/characters/i_walk_8.png" id="10_pmt2s"]
+[ext_resource type="Texture2D" uid="uid://ck6vo8y842nlt" path="res://Impy & BunBun/visual assets/characters/impy_turn_right_to_left.png" id="21_f8q6q"]
+[ext_resource type="AudioStream" uid="uid://c16s3sctnkuls" path="res://Impy & BunBun/sounds/SFX_Jump_13.wav" id="23_nkmum"]
+[ext_resource type="AudioStream" uid="uid://csy0r2gtogrpi" path="res://Impy & BunBun/sounds/SFX_Jump_12.wav" id="24_3r8yr"]
+[ext_resource type="AudioStream" uid="uid://bbqpqmyca0ij6" path="res://Impy & BunBun/sounds/Block Break 1.wav" id="25_3r8yr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2waoh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hcr7m")
+}],
+"loop": true,
+"name": &"cube",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nkmum")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_oyloq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ha7vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ha7vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ha7vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ha7vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ha7vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ha7vm")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lku2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_na5ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_r5dl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oyloq")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ha7vm")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qoriv")
+}],
+"loop": true,
+"name": &"look_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1dnmp")
+}],
+"loop": true,
+"name": &"look_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fg3pr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hcr7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qoriv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1dnmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e4kgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2whcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hm17e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pmt2s")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_f8q6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_f8q6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_f8q6q")
+}],
+"loop": true,
+"name": &"turn_left",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_exqdr"]
+radius = 13.0
+height = 68.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2waoh"]
+radius = 25.0
+height = 78.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcr7m"]
+size = Vector2(33, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dnmp"]
+size = Vector2(28, 32)
+
+[node name="Impy" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_2waoh")
+grav = Vector2(0, 1200)
+jump_grav = Vector2(0, 800)
+air_resistance = 0.7
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2waoh")
+animation = &"die"
+autoplay = "default"
+frame = 4
+frame_progress = 0.09582291
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_exqdr")
+
+[node name="interact_box" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="interact_collision" type="CollisionShape2D" parent="interact_box"]
+shape = SubResource("CapsuleShape2D_2waoh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="cube_hitbox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_hcr7m")
+
+[node name="cube_box_small" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1dnmp")
+
+[node name="coyote_timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="jump_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_nkmum")
+volume_db = -5.0
+
+[node name="jump_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_3r8yr")
+volume_db = -5.0
+
+[node name="die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_3r8yr")
+volume_db = -3.0
+
+[connection signal="area_entered" from="interact_box" to="." method="_on_interact_box_area_entered"]
+[connection signal="area_exited" from="interact_box" to="." method="_on_interact_box_area_exited"]
+[connection signal="body_entered" from="interact_box" to="." method="_on_interact_box_body_entered"]
+[connection signal="body_exited" from="interact_box" to="." method="_on_interact_box_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="coyote_timer" to="." method="_on_coyote_timer_timeout"]
+[connection signal="finished" from="die" to="." method="_on_die_finished"]

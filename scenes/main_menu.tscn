@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf58im0anrrrk"]
+
+[ext_resource type="Script" uid="uid://dgclmhx2b2w5j" path="res://Impy & BunBun/scripts/main_menu.gd" id="1_q4kvc"]
+[ext_resource type="Texture2D" uid="uid://dlp24ys2838jk" path="res://Impy & BunBun/visual assets/backgrounds and items/start_sketch.png" id="2_31s1i"]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = 80.0
+offset_right = -120.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q4kvc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="MenuOptions" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/MenuOptions"]
+layout_mode = 2
+texture = ExtResource("2_31s1i")
+
+[node name="start_button" type="Button" parent="HBoxContainer/VBoxContainer/MenuOptions/TextureRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 18.0
+offset_right = 61.0
+offset_bottom = 48.0
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/MenuOptions/TextureRect/start_button" to="." method="_on_start_button_pressed"]
